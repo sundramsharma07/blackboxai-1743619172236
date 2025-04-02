@@ -1,7 +1,7 @@
 {
-  "name": "ai-text-enhancer",
+  "name": "ai-driven-auto-correction-and-enhancement-system", 
   "version": "1.0.0",
-  "description": "AI-driven auto-correction and enhancement system",
+  "description": "AI-Driven Auto Correction and Enhancement System",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
