@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - AI Auto-Correction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .diff-insert {
+            background-color: #d1f7d1;
+            text-decoration: underline;
+        }
+        .diff-delete {
+            background-color: #ffd1d1;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold">AI Corrector</a>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-blue-300">Home</a>
+                <a href="about.html" class="hover:text-blue-300">About</a>
+                <a href="demo.html" class="hover:text-blue-300 font-semibold">Demo</a>
+                <a href="contact.html" class="hover:text-blue-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold mb-8">Try Our AI Correction System</h1>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Input Section -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-4">Enter Your Text</h2>
+                <textarea id="inputText" class="w-full h-64 p-4 border border-gray-300 rounded-lg mb-4" 
+                          placeholder="Type or paste your text here..."></textarea>
+                <div class="flex justify-between items-center">
+                    <div id="charCount" class="text-gray-500">0 characters</div>
+                    <button id="submitBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                        <i class="fas fa-magic mr-2"></i>Enhance Text
+                    </button>
+                </div>
+                <div id="errorMsg" class="text-red-500 mt-2 hidden">Please enter at least 10 characters</div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-4">Enhanced Version</h2>
+                <div id="outputText" class="w-full h-64 p-4 border border-gray-300 rounded-lg mb-4 bg-gray-50">
+                    <p class="text-gray-400">Your enhanced text will appear here...</p>
+                </div>
+                <div class="flex justify-end">
+                    <button id="copyBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium mr-2 hidden">
+                        <i class="fas fa-copy mr-2"></i>Copy
+                    </button>
+                    <button id="resetBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium">
+                        <i class="fas fa-redo mr-2"></i>Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div id="comparisonSection" class="mt-12 hidden">
+            <h2 class="text-2xl font-bold mb-6">Comparison</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Original Text</h3>
+                    <div id="originalText" class="bg-white p-4 rounded-lg border border-gray-300"></div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Enhanced Text</h3>
+                    <div id="enhancedText" class="bg-white p-4 rounded-lg border border-gray-300"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 AI Auto-Correction System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
